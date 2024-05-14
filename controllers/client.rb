@@ -27,6 +27,7 @@ module Gemini
         if config[:credentials][:api_key]
           @authentication = :api_key
           @api_key = config[:credentials][:api_key]
+          @project_id = config[:credentials][:project_id]
         elsif config[:credentials][:file_path]
           @authentication = :service_account
           @authorizer = ::Google::Auth::ServiceAccountCredentials.make_creds(
